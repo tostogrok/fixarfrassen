@@ -16,7 +16,8 @@ AFFILIATE = {
     "Byggstart": "",
 }
 
-from guides import GUIDES
+from guides import GUIDES as ALL_GUIDES
+GUIDES = [g for g in ALL_GUIDES if not g.get("draft")]
 
 CATS = [
     ("avlopp-och-vatten", "Avlopp och vatten", "Stopp i avloppet, droppande kranar och läckor."),
@@ -26,8 +27,17 @@ CATS = [
 CAT_NAME = {c[0]: c[1] for c in CATS}
 
 # ---------- Frasse ----------
-CAT_HEAD = '''<svg viewBox="0 0 160 160" aria-hidden="true"><path d="M38 58 L46 14 L74 44 Z" fill="#f4c430" stroke="#22262a" stroke-width="5" stroke-linejoin="round"/><path d="M122 58 L114 14 L86 44 Z" fill="#f4c430" stroke="#22262a" stroke-width="5" stroke-linejoin="round"/><path d="M47 50 L50 28 L64 44 Z" fill="#f7a8a0"/><path d="M113 50 L110 28 L96 44 Z" fill="#f7a8a0"/><path d="M30 82 C30 50 52 38 80 38 C108 38 130 50 130 82 C130 116 108 140 80 140 C52 140 30 116 30 82 Z" fill="#f4c430" stroke="#22262a" stroke-width="5"/><path d="M33 66 C55 56 105 56 127 66" fill="none" stroke="#22262a" stroke-width="10" stroke-linecap="round"/><rect x="67" y="46" width="26" height="20" rx="5" fill="#22262a"/><circle cx="80" cy="56" r="7" fill="#fff6c8"/><circle cx="62" cy="88" r="9" fill="#fff" stroke="#22262a" stroke-width="3"/><circle cx="98" cy="88" r="9" fill="#fff" stroke="#22262a" stroke-width="3"/><circle cx="63" cy="89" r="4.5" fill="#22262a"/><circle cx="99" cy="89" r="4.5" fill="#22262a"/><ellipse cx="80" cy="107" rx="10" ry="7" fill="#f08a9a" stroke="#22262a" stroke-width="3"/><path d="M80 114 Q80 122 71 122 M80 114 Q80 122 89 122" fill="none" stroke="#22262a" stroke-width="3" stroke-linecap="round"/><path d="M40 106 L60 108 M40 116 L60 112 M120 106 L100 108 M120 116 L100 112" stroke="#22262a" stroke-width="3" stroke-linecap="round"/></svg>'''
-CAT_HERO = CAT_HEAD.replace('<svg viewBox="0 0 160 160"', '<svg class="cat" viewBox="0 0 160 160"').replace('</svg>', '<g transform="translate(150 146) rotate(-40) scale(0.75)"><rect x="-7" y="-6" width="14" height="46" rx="7" fill="#8a97a2" stroke="#22262a" stroke-width="3"/><path d="M-17 -20 a19 19 0 1 0 34 0 l0 -12 h-9 v12 h-16 v-12 h-9 z" fill="#8a97a2" stroke="#22262a" stroke-width="3" stroke-linejoin="round"/></g></svg>').replace('viewBox="0 0 160 160"', 'viewBox="0 0 175 175"')
+FRASSE = '<img src="/img/frasse.webp" width="582" height="640" alt="Frasse, en katt i blå overall med pannlampa och skiftnyckel">'
+FRASSE_HEAD = '<img src="/img/frasse-head.webp" width="256" height="256" alt="">'
+CAT_ICON = {
+    "avlopp-och-vatten": '<svg viewBox="0 0 24 24" width="24" height="24" fill="#5aa9e6" stroke="#2a2622" stroke-width="1.6"><path d="M12 3c3 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 3-6.5 6-11z"/></svg>',
+    "varme-och-element": '<svg viewBox="0 0 24 24" width="24" height="24" fill="#f2994a" stroke="#2a2622" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 6v12M12 6v12M16 6v12" fill="none"/></svg>',
+    "vitvaror": '<svg viewBox="0 0 24 24" width="24" height="24" fill="#e7eef3" stroke="#2a2622" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.5" fill="#9cc8ea"/><path d="M7 6.5h4" fill="none"/></svg>',
+}
+
+def tip(text, title="Frasses tips"):
+    return f'<div class="tip">{FRASSE_HEAD}<div class="bubble"><strong>{title}</strong><p>{text}</p></div></div>'
+
 SEARCH_ICON = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg>'
 
 def esc(s):
@@ -55,15 +65,16 @@ def layout(title, desc, path, body, schema=None, noindex=False):
 <meta property="og:url" content="{url}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sv_SE">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/nunito-latin.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="/style.css">
 {sch}
 {AD_HEAD}
 </head>
 <body>
 <header class="site"><div class="wrap">
-<a class="logo" href="/">{CAT_HEAD}<span class="w">Fixar<b>frassen</b></span></a>
+<a class="logo" href="/">{FRASSE_HEAD.replace('alt=""', 'alt="" width="46" height="46"', 1)}<span>Fixar<b>frassen</b></span></a>
 <nav><a href="/#guider">Alla guider</a></nav>
 </div></header>
 <main><div class="wrap">
@@ -102,12 +113,17 @@ def guide_page(g, by_slug):
     partner = g.get("partner")
     partner_on = bool(partner and AFFILIATE.get(partner))
     admark = f'<p class="admark">Sidan innehåller reklam genom annonslänkar för {esc(partner)}</p>' if partner_on else ""
-    facts = "".join(f"<li><b>{esc(k)}:</b> {esc(v)}</li>" for k, v in g["facts"])
-    need = ""
+    chips = "".join(f"<li>{esc(k)}: {esc(v)}</li>" for k, v in g["facts"])
     if g.get("need"):
-        need = '<div class="need"><h2>Det här behöver du</h2><ul>' + "".join(f"<li>{x}</li>" for x in g["need"]) + "</ul></div>"
-    steps = '<ol class="steps">' + "".join(
-        f'<li><h3>{esc(t)}</h3>{"".join("<p>" + p + "</p>" for p in (txt if isinstance(txt, list) else [txt]))}</li>' for t, txt in g["steps"]) + "</ol>"
+        chips += f'<li>Du behöver: {esc(", ".join(g["need"]))}</li>'
+    def step_html(st):
+        t, txt = st[0], st[1]
+        img = st[2] if len(st) > 2 else None
+        ps = "".join("<p>" + p + "</p>" for p in (txt if isinstance(txt, list) else [txt]))
+        if img:
+            return f'<li><div class="pic"><img src="/img/{img[0]}" alt="{esc(img[1])}" width="320" height="200" loading="lazy"></div><div><h3>{esc(t)}</h3>{ps}</div></li>'
+        return f'<li class="noimg"><div><h3>{esc(t)}</h3>{ps}</div></li>'
+    steps = '<ol class="steps">' + "".join(step_html(st) for st in g["steps"]) + "</ol>"
     help_box = ""
     if g.get("help"):
         h = g["help"]
@@ -116,15 +132,17 @@ def guide_page(g, by_slug):
             link = f'<a class="cta" href="{AFFILIATE[partner]}" rel="sponsored nofollow noopener" target="_blank">{esc(h["cta"])}</a>'
         help_box = f'<div class="help"><h2>{esc(h["title"])}</h2><p>{h["text"]}</p>{link}</div>'
     related = ""
-    if g.get("related"):
-        related = '<h2>Fler guider</h2><div class="cards">' + "".join(card(by_slug[s]) for s in g["related"]) + "</div>"
+    rel = [by_slug[s] for s in g.get("related", []) if s in by_slug]
+    if rel:
+        related = '<h2>Fler guider</h2><div class="cards">' + "".join(card(r) for r in rel) + "</div>"
     body = f"""{crumbs(trail)}
+<div class="ghead"><div>
 <h1>{esc(g['h1'])}</h1>
 {admark}
 <p class="lead">{g['lead']}</p>
-<ul class="facts">{facts}</ul>
-<div class="answer"><strong class="h">Snabbt svar</strong><p>{g['answer']}</p></div>
-{need}
+</div>{FRASSE}</div>
+<ul class="chips">{chips}</ul>
+<div class="answer"><p>{g['answer']}</p></div>
 <h2>{esc(g.get('steps_title', 'Så gör du'))}</h2>
 {steps}
 {g.get('after', '')}
@@ -134,10 +152,11 @@ def guide_page(g, by_slug):
 <p class="note updated">Senast uppdaterad {g['updated']}</p>"""
     howto = {"@context": "https://schema.org", "@type": "HowTo", "name": g["h1"], "description": strip_tags(g["answer"]),
              "inLanguage": "sv-SE",
-             "step": [{"@type": "HowToStep", "position": i + 1, "name": t,
-                       "text": strip_tags(" ".join(txt) if isinstance(txt, list) else txt)} for i, (t, txt) in enumerate(g["steps"])]}
+             "step": [dict({"@type": "HowToStep", "position": i + 1, "name": st[0],
+                       "text": strip_tags(" ".join(st[1]) if isinstance(st[1], list) else st[1])},
+                      **({"image": SITE_URL + "/img/" + st[2][0]} if len(st) > 2 else {})) for i, st in enumerate(g["steps"])]}
     if g.get("need"):
-        howto["tool"] = [{"@type": "HowToTool", "name": strip_tags(x)} for x in g["need"]]
+        howto["tool"] = [{"@type": "HowToTool", "name": x} for x in g["need"]]
     faq = {"@context": "https://schema.org", "@type": "FAQPage",
            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in g["faqs"]]}
     article = {"@context": "https://schema.org", "@type": "Article", "headline": g["h1"], "inLanguage": "sv-SE",
@@ -151,13 +170,15 @@ def write(path, text):
     with open(full, "w", encoding="utf-8") as f:
         f.write(text)
 
+ALL_SLUGS = {g["slug"] for g in ALL_GUIDES}
+
 def check(guides):
     slugs = [g["slug"] for g in guides]
     assert len(slugs) == len(set(slugs)), "Dubblett-slug"
     for g in guides:
         assert g["cat"] in CAT_NAME, g["slug"]
         for s in g.get("related", []):
-            assert s in slugs, f"{g['slug']} länkar till okänd guide {s}"
+            assert s in ALL_SLUGS, f"{g['slug']} länkar till okänd guide {s}"
         assert len(g["title"]) <= 70, f"För lång title: {g['slug']} ({len(g['title'])})"
         assert len(g["desc"]) <= 165, f"För lång description: {g['slug']} ({len(g['desc'])})"
 
@@ -167,9 +188,10 @@ def build():
     if os.path.exists(DIST):
         shutil.rmtree(DIST)
     os.makedirs(DIST)
-    for fn in ("style.css", "search.js", "favicon.svg"):
+    for fn in ("style.css", "search.js", "favicon.png", "apple-touch-icon.png"):
         shutil.copy(os.path.join(SRC, fn), DIST)
-    shutil.copytree(os.path.join(SRC, "fonts"), os.path.join(DIST, "fonts"))
+    shutil.copytree(os.path.join(SRC, "img"), os.path.join(DIST, "img"))
+    shutil.copytree(os.path.join(SRC, "fonts"), os.path.join(DIST, "fonts"), ignore=shutil.ignore_patterns("inter-*", "LICENSE.txt"))
 
     for g in GUIDES:
         write(f"/{g['slug']}/", guide_page(g, by_slug))
@@ -177,6 +199,8 @@ def build():
     # Kategorisidor
     for cid, cname, cdesc in CATS:
         items = [g for g in GUIDES if g["cat"] == cid]
+        if not items:
+            continue
         trail = [("Start", "/"), (cname, f"/{cid}/")]
         body = f"""{crumbs(trail)}
 <h1>{esc(cname)}</h1>
@@ -189,13 +213,13 @@ def build():
     for cid, cname, cdesc in CATS:
         items = [g for g in GUIDES if g["cat"] == cid]
         if items:
-            groups += f'<section class="grp"><h2><a href="/{cid}/" style="color:inherit;text-decoration:none">{esc(cname)}</a></h2><p>{esc(cdesc)}</p><div class="cards">{"".join(card(g) for g in items)}</div></section>'
+            groups += f'<section class="grp"><h2><span class="ico">{CAT_ICON[cid]}</span><a href="/{cid}/">{esc(cname)}</a></h2><p>{esc(cdesc)}</p><div class="cards">{"".join(card(g) for g in items)}</div></section>'
     body = f"""<section class="hero">
 <div>
 <h1>Fixa det själv.</h1>
-<p class="lead">Raka guider för det som krånglar hemma: stopp i avloppet, droppande kranar, kalla element och vitvaror som strular.</p>
+<p class="lead">Frasse visar hur du löser det som krånglar hemma, steg för steg och med bilder.</p>
 </div>
-{CAT_HERO}
+{FRASSE}
 </section>
 <label class="search">{SEARCH_ICON}<input type="search" id="q" placeholder="Vad har gått sönder?" aria-label="Sök bland guiderna" autocomplete="off"></label>
 <div id="guider">{groups}</div>

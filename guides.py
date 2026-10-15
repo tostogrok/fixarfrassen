@@ -4,43 +4,46 @@
 
 UPDATED = "2026-10-15"
 
+def tip_html(text, title="Frasses tips"):
+    return f'<div class="tip"><img src="/img/frasse-head.webp" width="256" height="256" alt=""><div class="bubble"><strong>{title}</strong><p>{text}</p></div></div>'
+
 GUIDES = [
 dict(
     slug="stopp-i-avloppet-koket",
     cat="avlopp-och-vatten",
-    title="Stopp i avloppet i köket – så löser du det själv | Fixarfrassen",
-    desc="Stopp i diskhon? Börja med varmt vatten och vaskrensare, rensa vattenlåset och ta till spiralen. Så vet du också när stoppet sitter längre ner.",
+    title="Stopp i avloppet i köket – så fixar du det själv | Fixarfrassen",
+    desc="Stopp i diskhon? Så gör en fastighetsskötare: testa pumpen, skruva loss rören under hon, spola ur dem och ta rensvajern om stoppet sitter längre ner.",
     h1="Stopp i avloppet i köket",
-    card="Diskhon rinner inte undan – från vaskrensare till spiral",
-    keywords=["stopp", "avlopp", "kök", "diskho", "vattenlås", "husmorstips", "bikarbonat"],
-    lead="Vattnet står kvar i diskhon eller rinner undan långsamt. Oftast sitter stoppet i vattenlåset under hon, och det fixar du på en kvart.",
-    facts=[("Tid", "15–45 min"), ("Svårighet", "Lätt"), ("Stäng vattnet", "Nej")],
-    answer="Häll i varmt vatten med lite diskmedel och pumpa med en vaskrensare. Hjälper det inte, skruva loss och rensa vattenlåset under diskhon. Sitter stoppet ännu längre in, använd en avloppsspiral. Är flera avlopp i lägenheten tröga samtidigt sitter stoppet troligen i stammen, och då ska du kontakta hyresvärden eller en rörmokare.",
-    need=["Vaskrensare (sugpropp)", "Hink och trasa", "Diskmedel och varmt vatten", "Avloppsspiral om stoppet sitter längre in", "Gummihandskar"],
+    card="Diskhon rinner inte undan – så gör proffsen",
+    keywords=["stopp", "avlopp", "kök", "diskho", "vattenlås", "rensvajer", "husmorstips", "längre ner"],
+    lead="Oftast sitter det en propp av fett och matrester i rören under hon. Den fixar du själv på en halvtimme.",
+    facts=[("Tid", "15–30 min"), ("Svårighet", "Lätt")],
+    need=["hink", "handduk", "skruvmejsel", "rensvajer om det behövs"],
+    answer="Testa pumpen i tio sekunder. Hjälper det inte: skruva loss skruven i silen, ta bort rören under hon och spola ur dem i duschen. Sitter stoppet längre in, ta rensvajern. Fortfarande stopp? Ring spolbil.",
     steps=[
-        ("Kolla om det bara är diskhon", "Spola lite vatten i handfatet och duschen. Rinner det bra där sitter stoppet i köksavloppet, och du kan fixa det själv. Är flera avlopp tröga samtidigt, eller kommer det upp vatten i ett annat avlopp, sitter stoppet längre ner. Hoppa då till sista steget."),
-        ("Häll i varmt vatten med diskmedel", "Ös upp det mesta av vattnet som står i hon. Häll i en rejäl skvätt diskmedel och sedan några liter varmt vatten från kranen. Vänta tio minuter. Diskmedlet löser upp fett, som är den vanligaste orsaken till stopp i köket.") ,
-        ("Pumpa med vaskrensare", ["Ha några centimeter vatten i hon så att vaskrensaren täcker. Täpp till bräddavloppet, det lilla hålet högt upp i hon, med en blöt trasa. Har du dubbla hoar, täpp till den andra med en propp.", "Tryck ner och dra upp snabbt 15–20 gånger. Lyft och se om vattnet rinner undan."]),
-        ("Rensa vattenlåset", ["Ställ en hink under vattenlåset, den böjda delen av röret under hon. Skruva loss muttrarna för hand. Ofta sitter proppen här: fett, matrester och kaffesump.", "Rensa och skölj delarna i ett annat avlopp, inte i diskhon. Kolla att packningarna sitter rätt när du skruvar ihop. Dra åt för hand och spola en stund för att se att det inte läcker."]),
-        ("Använd avloppsspiral", "Sitter stoppet längre in, mata in spiralen i röret som går mot väggen när vattenlåset är borttaget. Vrid hela tiden medan du matar in. När det tar emot, vrid och dra fram och tillbaka tills det släpper. Dra ut spiralen, sätt tillbaka vattenlåset och spola med varmt vatten."),
-        ("Stoppet sitter längre ner", "Har inget hjälpt sitter stoppet troligen i ledningen i väggen eller i stammen. Bor du i hyresrätt eller bostadsrätt, kontakta hyresvärden eller föreningen. Bor du i villa behöver ledningen oftast spolas av en rörmokare med högtrycksspolning."),
+        ("Spola och kolla", "Spola vatten och se hur fort det rinner undan. Rinner det trögt även i badrummet sitter stoppet längre ner, gå direkt till steg 6.", ("kok-1-spola.svg", "Diskho med vatten som står kvar")),
+        ("Testa med pump i tio sekunder", "Några centimeter vatten i hon, sätt på pumpen och pumpa. Det hjälper sällan i köket, men det tar bara tio sekunder.", ("kok-2-pump.svg", "Pump i diskhon")),
+        ("Lossa rören under hon", "Ställ en hink under. Skruva bort skruven i mitten av silen, då släpper rören. Skruva loss muttrarna för hand.", ("vattenlas.svg", "Rören under diskhon med skruven i silen, muttrarna och vattenlåset")),
+        ("Spola ur rören i duschen", "Ta med alla plaströr till duschen och spola ur dem ordentligt. Där sitter oftast proppen: fett, matrester och plastbitar.", ("kok-4-dusch.svg", "Plaströr som spolas ur i duschen")),
+        ("Titta in i röret mot väggen", "Var rören rena? Lys in i röret som går in i väggen. Ser du stoppet där inne sitter det i stammen.", ("kok-5-titta.svg", "Titta in i avloppsröret")),
+        ("Ta rensvajern", "Mata in vajern i röret och vrid. Peta loss stoppet tills det släpper. Sätt tillbaka rören och spola.", ("kok-6-vajer.svg", "Rensvajer i avloppsröret")),
+        ("Ring spolbil", "Släpper det inte sitter stoppet långt ner i stammen. Då behövs högtrycksspolning.", ("kok-7-spolbil.svg", "Spolbil")),
     ],
-    after='''<div class="warn"><strong>Var försiktig med kemisk avloppsrensare.</strong> Den är frätande och kan stänka. Använd den aldrig efter att du har provat andra medel i samma avlopp, och blanda aldrig olika medel. Har du redan hällt i avloppsrensare: pumpa inte med vaskrensare och skruva inte loss vattenlåset förrän det har spolats ur ordentligt.</div>
-<h2>Fungerar bikarbonat och ättika?</h2>
-<p>Det fräser och ser effektivt ut, men det löser bara lätta beläggningar. En riktig propp av fett och matrester får du bort snabbare med varmt vatten, diskmedel och vaskrensare. Tipset kan däremot fungera bra som underhåll en gång i månaden.</p>
-<h2>Så slipper du nästa stopp</h2>
-<p>Torka ur stekpannan med hushållspapper innan du diskar. Häll aldrig flottyr eller stekfett i avloppet. Använd en sil i avloppet, och häll inte kaffesump i hon.</p>''',
-    help=dict(title="Fick du inte bort stoppet?", text="Sitter stoppet i stammen behövs högtrycksspolning. I hyresrätt och bostadsrätt ska du kontakta hyresvärden eller föreningen. De ansvarar oftast för stammarna. I villa, ring en rörmokare."),
+    after=tip_html("Pumpen hjälper nästan aldrig i köket. Proppen är fett och matrester som klumpat ihop sig i rören. Plocka isär direkt, så går det fortare.")
+        + '<div class="warn">Bor du i hyresrätt eller bostadsrätt? Ring fastighetsskötaren, stammen är deras.</div>',
+    help=dict(title="Fick du inte loss det?", text="Sitter stoppet i stammen behövs spolbil. I villa ringer du en spolfirma eller rörmokare. I hyresrätt och bostadsrätt ringer du fastighetsskötaren."),
     faqs=[
-        ("Hur vet jag om stoppet sitter längre ner?", "Om flera avlopp är tröga samtidigt, om det bubblar i ett annat avlopp när du tappar vatten, eller om stoppet kommer tillbaka trots att vattenlåset är rent."),
-        ("Kan jag hälla kokande vatten i avloppet?", "Undvik kokande vatten om du har vattenlås och rör av plast. Hett vatten från kranen räcker oftast tillsammans med diskmedel."),
-        ("Vem betalar för stopp i avloppet i en hyresrätt?", "Hyresvärden ansvarar oftast för avloppen. Har du själv orsakat stoppet, till exempel genom att hälla ut fett, kan du bli ersättningsskyldig. Kontakta värden innan du anlitar någon själv."),
-        ("Vad gör jag om det luktar avlopp efteråt?", "Kolla att vattenlåset sitter rätt och att packningarna är hela. Spola en stund så att vattenlåset fylls, det är vattnet som stoppar lukten."),
+        ("Varför hjälper inte pumpen?", "I köket är stoppet oftast en fast propp av fett och matrester i rören. Den sitter för hårt för att pumpas loss."),
+        ("Vad är en rensvajer?", "En lång, böjlig stålspiral som du matar in i avloppet och vrider. Den petar loss stopp som sitter längre in än vattenlåset."),
+        ("Hur vet jag att stoppet sitter längre ner?", "Om rören under hon är rena men vattnet ändå står kvar, eller om flera avlopp är tröga samtidigt."),
+        ("Fungerar bikarbonat och ättika?", "Inte mot en riktig propp. Det tar bara lätta beläggningar."),
+        ("Hur slipper jag stopp i köket?", "Häll aldrig stekfett i hon. Torka ur pannan med papper först och ha en sil i avloppet."),
     ],
     related=["stopp-i-golvbrunnen", "stopp-i-toaletten", "droppande-kran"],
     updated=UPDATED,
 ),
 dict(
+    draft=True,
     slug="stopp-i-golvbrunnen",
     cat="avlopp-och-vatten",
     title="Stopp i duschen och golvbrunnen – rensa själv | Fixarfrassen",
@@ -72,6 +75,7 @@ dict(
     updated=UPDATED,
 ),
 dict(
+    draft=True,
     slug="stopp-i-toaletten",
     cat="avlopp-och-vatten",
     title="Stopp i toaletten – så får du bort det själv | Fixarfrassen",
@@ -103,6 +107,7 @@ dict(
     updated=UPDATED,
 ),
 dict(
+    draft=True,
     slug="droppande-kran",
     cat="avlopp-och-vatten",
     title="Droppande kran – byt packning eller kartusch själv | Fixarfrassen",
@@ -133,6 +138,7 @@ dict(
     updated=UPDATED,
 ),
 dict(
+    draft=True,
     slug="lufta-element",
     cat="varme-och-element",
     title="Lufta element – så gör du steg för steg | Fixarfrassen",
@@ -167,6 +173,7 @@ dict(
     updated=UPDATED,
 ),
 dict(
+    draft=True,
     slug="byta-termostat-element",
     cat="varme-och-element",
     title="Byta termostat på element – utan att tömma systemet | Fixarfrassen",
@@ -196,6 +203,7 @@ dict(
     updated=UPDATED,
 ),
 dict(
+    draft=True,
     slug="diskmaskinen-diskar-inte-rent",
     cat="vitvaror",
     title="Diskmaskinen diskar inte rent – 7 saker att kolla | Fixarfrassen",
