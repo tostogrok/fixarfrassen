@@ -1,0 +1,10 @@
+{
+  // Statisk sajt: Cloudflare serverar filerna i ./dist
+  "name": "fixarfrassen",
+  "compatibility_date": "2026-10-01",
+  "previews": {},
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
