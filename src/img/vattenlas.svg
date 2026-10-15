@@ -1,42 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" role="img" aria-labelledby="t d" font-family="Nunito, Arial, sans-serif">
-  <title id="t">Rören under diskhon</title>
-  <desc id="d">Skiss av diskhon, silen med skruven i mitten, vattenlåset med muttrar och röret in mot väggen.</desc>
-  <g transform="translate(150 0)">
-  <!-- Bänkskiva och ho -->
-  <rect x="40" y="40" width="380" height="18" rx="4" fill="#d9cfb8"/>
-  <path d="M110 58 h220 v58 a18 18 0 0 1 -18 18 h-184 a18 18 0 0 1 -18 -18 z" fill="#e6ebef" stroke="#22262a" stroke-width="3"/>
-  <!-- Silen och skruven -->
-  <rect x="196" y="128" width="48" height="10" rx="3" fill="#9aa6b0" stroke="#22262a" stroke-width="3"/>
-  <circle cx="220" cy="128" r="6" fill="#f4c430" stroke="#22262a" stroke-width="3"/>
-  <!-- Rör ner -->
-  <rect x="206" y="138" width="28" height="90" fill="#f7f7f5" stroke="#22262a" stroke-width="3"/>
-  <!-- Mutter 1 -->
-  <rect x="198" y="222" width="44" height="18" rx="4" fill="#f4c430" stroke="#22262a" stroke-width="3"/>
-  <!-- Vattenlåset (U-böj) -->
-  <path d="M206 240 v40 a42 42 0 0 0 84 0 v-20" fill="none" stroke="#22262a" stroke-width="31" stroke-linecap="butt"/>
-  <path d="M206 240 v40 a42 42 0 0 0 84 0 v-20" fill="none" stroke="#f7f7f5" stroke-width="25" stroke-linecap="butt"/>
-  <!-- Vatten och propp i böjen -->
-  <path d="M209 290 a39 39 0 0 0 78 0" fill="none" stroke="#9cc8ea" stroke-width="18"/>
-  <circle cx="236" cy="318" r="9" fill="#8a6d3b"/><circle cx="252" cy="321" r="7" fill="#a5844c"/><circle cx="244" cy="312" r="6" fill="#6e5530"/>
-  <!-- Mutter 2 -->
-  <rect x="270" y="244" width="40" height="18" rx="4" fill="#f4c430" stroke="#22262a" stroke-width="3"/>
-  <!-- Rör mot väggen -->
-  <rect x="290" y="228" width="30" height="16" fill="#f7f7f5" stroke="#22262a" stroke-width="3"/>
-  <rect x="318" y="226" width="150" height="20" fill="#f7f7f5" stroke="#22262a" stroke-width="3"/>
-  <!-- Vägg -->
-  <rect x="468" y="40" width="26" height="340" fill="#e9e1cf"/>
-  <rect x="468" y="222" width="26" height="28" fill="#cfc3a7"/>
-  </g>
-  <g font-size="17" fill="#22262a" font-weight="700">
-    <path d="M196 140 L362 128" stroke="#22262a" stroke-width="2" fill="none"/>
-    <text x="16" y="136">Skruven i silen</text>
-    <text x="16" y="156" font-weight="400" font-size="15">Lossa den så släpper rören</text>
-    <path d="M100 232 L348 231" stroke="#22262a" stroke-width="2" fill="none"/>
-    <text x="16" y="230">Muttrar</text>
-    <text x="16" y="250" font-weight="400" font-size="15">Skruva för hand</text>
-    <path d="M386 330 L300 368" stroke="#22262a" stroke-width="2" fill="none"/>
-    <text x="96" y="392">Vattenlåset: här sitter stoppet oftast</text>
-    <text x="490" y="196" font-size="15" font-weight="400">Mot väggen och</text>
-    <text x="490" y="214" font-size="15" font-weight="400">avloppsstammen</text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" role="img" aria-label="Rören under en diskho med två hoar"><title>Rören under en diskho med två hoar</title><rect x="150" y="40" width="440" height="16" rx="4" fill="#d9cfb8"/><path d="M180 56 h170 v52 a16 16 0 0 1 -16 16 h-138 a16 16 0 0 1 -16 -16 z" fill="#e6ebef" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M390 56 h170 v52 a16 16 0 0 1 -16 16 h-138 a16 16 0 0 1 -16 -16 z" fill="#e6ebef" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M265 124 V170 H475" fill="none" stroke="#2a2622" stroke-width="28" stroke-linecap="butt" stroke-linejoin="round"/><path d="M265 124 V170 H475" fill="none" stroke="#f7f7f5" stroke-width="22" stroke-linecap="butt" stroke-linejoin="round"/><path d="M475 124 V250" fill="none" stroke="#2a2622" stroke-width="28" stroke-linecap="butt" stroke-linejoin="round"/><path d="M475 124 V250" fill="none" stroke="#f7f7f5" stroke-width="22" stroke-linecap="butt" stroke-linejoin="round"/><path d="M475 250 v26 a34 34 0 0 0 68 0 v-24" fill="none" stroke="#2a2622" stroke-width="28" stroke-linecap="butt" stroke-linejoin="round"/><path d="M475 250 v26 a34 34 0 0 0 68 0 v-24" fill="none" stroke="#f7f7f5" stroke-width="22" stroke-linecap="butt" stroke-linejoin="round"/><path d="M478 278 a31 31 0 0 0 62 0" fill="none" stroke="#9cc8ea" stroke-width="16"/><circle cx="500" cy="302" r="6.3" fill="#8a6d3b"/><circle cx="508.1" cy="304.7" r="4.5" fill="#a5844c"/><circle cx="503.6" cy="296.6" r="3.6" fill="#6e5530"/><path d="M543 252 V236 H640" fill="none" stroke="#2a2622" stroke-width="28" stroke-linecap="butt" stroke-linejoin="round"/><path d="M543 252 V236 H640" fill="none" stroke="#f7f7f5" stroke-width="22" stroke-linecap="butt" stroke-linejoin="round"/><rect x="241" y="120" width="48" height="9" rx="3" fill="#9aa6b0" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="265" cy="119" r="6" fill="#ffc93c" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="451" y="120" width="48" height="9" rx="3" fill="#9aa6b0" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="475" cy="119" r="6" fill="#ffc93c" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="453" y="162" width="44" height="16" rx="4" fill="#ffc93c" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="453" y="240" width="44" height="16" rx="4" fill="#ffc93c" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="523" y="248" width="40" height="14" rx="4" fill="#ffc93c" stroke="#2a2622" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="640" y="30" width="28" height="360" fill="#eadfc6"/><rect x="640" y="222" width="28" height="28" fill="#cfc3a7"/><g font-family="Nunito,Arial,sans-serif" fill="#2a2622">
+<text x="16" y="110" font-size="18" font-weight="800">Skruven i silen</text><text x="16" y="130" font-size="15">Lossa den så släpper rören</text>
+<path d="M214 128 L242 124" fill="none" stroke="#2a2622" stroke-width="2"/>
+<text x="16" y="230" font-size="18" font-weight="800">Muttrar</text><text x="16" y="250" font-size="15">Skruva för hand</text>
+<path d="M90 236 L448 248" fill="none" stroke="#2a2622" stroke-width="2"/>
+<text x="330" y="380" font-size="18" font-weight="800">Vattenlåset: här sitter stoppet oftast</text>
+<path d="M500 316 L470 360" fill="none" stroke="#2a2622" stroke-width="2"/>
+<text x="560" y="210" font-size="14">In i väggen</text></g></svg>
