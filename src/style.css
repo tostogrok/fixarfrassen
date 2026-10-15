@@ -58,7 +58,7 @@ p { margin: 0 0 12px; }
 /* Steg */
 ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: grid; gap: 16px; }
 ol.steps > li { counter-increment: s; background: var(--card); border-radius: var(--r); padding: 18px; box-shadow: 0 3px 0 var(--line); display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: center; }
-ol.steps > li.noimg { grid-template-columns: 1fr; }
+ol.steps > li.noimg, ol.steps > li.wide { grid-template-columns: 1fr; }
 ol.steps .pic { background: #fffaf0; border-radius: 16px; padding: 6px; }
 ol.steps h3::before { content: counter(s); display: inline-grid; place-items: center; width: 32px; height: 32px; margin-right: 10px; border-radius: 50%; background: var(--sun); font-weight: 900; font-size: 17px; vertical-align: 2px; }
 ol.steps p { margin: 6px 0 0; }

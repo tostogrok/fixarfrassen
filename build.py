@@ -120,6 +120,8 @@ def guide_page(g, by_slug):
         t, txt = st[0], st[1]
         img = st[2] if len(st) > 2 else None
         ps = "".join("<p>" + p + "</p>" for p in (txt if isinstance(txt, list) else [txt]))
+        if img and img[0] == "vattenlas.svg":
+            return f'<li class="wide"><div><h3>{esc(t)}</h3>{ps}</div><div class="pic"><img src="/img/{img[0]}" alt="{esc(img[1])}" width="700" height="420" loading="lazy"></div></li>'
         if img:
             return f'<li><div class="pic"><img src="/img/{img[0]}" alt="{esc(img[1])}" width="320" height="200" loading="lazy"></div><div><h3>{esc(t)}</h3>{ps}</div></li>'
         return f'<li class="noimg"><div><h3>{esc(t)}</h3>{ps}</div></li>'
