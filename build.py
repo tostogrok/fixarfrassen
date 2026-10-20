@@ -145,6 +145,7 @@ def guide_page(g, by_slug):
 </div>{FRASSE}</div>
 <ul class="chips">{chips}</ul>
 <div class="answer"><p>{g['answer']}</p></div>
+{g.get('figure', '')}
 <h2>{esc(g.get('steps_title', 'Så gör du'))}</h2>
 {steps}
 {g.get('after', '')}
