@@ -155,7 +155,7 @@ dict(
         ("Ta nästa element", "Har du flera våningar: börja längst ner och sluta högst upp."),
         ("Kolla trycket", "Luftar du sjunker trycket i systemet. I villa: kolla mätaren vid pannan och fyll på om det behövs. I hyreshus fyller fastighetsskötaren på i teknikrummet."),
     ],
-    after=tip_html("Bor du i hyresrätt? Gör en felanmälan, så luftar fastighetsskötaren. Det ingår i hyran.")
+    after=tip_html("Bor du i hyresrätt? Gör en felanmälan, så luftar fastighetsskötaren. Det brukar ingå i hyran.")
         + '<h2>Har du villa med egen panna eller värmepump?</h2><p>Stäng av cirkulationspumpen en stund innan du luftar, så hinner luften samla sig högst upp. Läs i manualen till din värmepump om den behöver stängas av.</p>'
         + '<h2>Kallt trots luftning?</h2><p>Är elementet kallt nertill men varmt upptill är det inte luft. Ofta har stiftet i termostaten fastnat. Tryck försiktigt på stiftet under termostathuvudet så att det fjädrar. Är flera element kalla samtidigt kan trycket vara för lågt eller systemet behöva justeras in. Då ringer du fastighetsskötaren eller en VVS-firma.</p>',
     help=dict(title="Fortfarande kallt?", text="I hyresrätt eller bostadsrätt: felanmäl till fastighetsskötaren. I villa: ring en VVS-firma eller den som installerade värmesystemet."),
