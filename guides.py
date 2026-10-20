@@ -150,7 +150,7 @@ dict(
     figure='<figure class="big"><img src="/img/varmesystem-luftning.svg" width="1010" height="740" alt="Genomskärning av ett flerbostadshus: varmt vatten pumpas från teknikrummet upp till elementen, luften samlas högst upp i elementet på översta våningen" loading="lazy"><figcaption>Luften följer med vattnet uppåt och fastnar högst upp. Därför är det oftast elementen på översta våningen som blir kalla.</figcaption></figure>',
     steps=[
         ("Hitta luftningsventilen", "Den sitter i elementets övre hörn, oftast på motsatt sida mot termostaten."),
-        ("Öppna försiktigt", "Trasa eller mugg under. Vrid moturs tills det börjar pysa luft eller komma vatten."),
+        ("Öppna försiktigt", "Trasa eller mugg under. Vrid moturs tills det börjar pysa luft eller komma vatten. Skruva aldrig ur ventilen helt."),
         ("Låt det rinna en stund", "Först kommer ofta vatten blandat med luft. Vänta tills det bara kommer vatten, stäng sedan ventilen. Vattnet kan vara svart, så skydda golv och vägg. Det gör inget om det skvätter lite, torka bara upp."),
         ("Ta nästa element", "Har du flera våningar: börja längst ner och sluta högst upp."),
         ("Kolla trycket", "Luftar du sjunker trycket i systemet. I villa: kolla mätaren vid pannan och fyll på om det behövs. I hyreshus fyller fastighetsskötaren på i teknikrummet."),
@@ -160,10 +160,11 @@ dict(
         + '<h2>Har du villa med egen panna eller värmepump?</h2><p>Stäng av cirkulationspumpen en stund innan du luftar, så hinner luften samla sig högst upp. Läs i manualen till din värmepump om den behöver stängas av.</p>'
         + '<h2>Kallt trots luftning? Kolla termostaten</h2>'
         + '<p>Termostaten kan ha fastnat. Det är lika vanligt som luft.</p>'
-        + '<ol class="mini"><li><strong>Vrid från lägsta till högsta läget.</strong> När termostaten öppnar hörs vattnet rinna. Hörs ingen skillnad och blir elementet inte varmt har den fastnat.</li>'
-        + '<li><strong>Ta av termostaten.</strong> Vrid till max. Lossa skruven eller muttern som håller den och dra av den rakt ut. Inget vatten kommer ut.</li>'
+        + '<ol class="mini"><li><strong>Vrid från lägsta till högsta läget.</strong> När termostaten öppnar fullt börjar varmt vatten strömma genom elementet. Ofta hörs ett svagt sus, och röret in till elementet blir varmt inom några minuter. Händer inget av det har termostaten fastnat.</li>'
+        + '<li><strong>Ta av termostaten.</strong> Vrid till max. Lossa skruven eller muttern som håller vredet och dra av det rakt ut. Inget vatten kommer ut.</li>'
         + '<li><strong>Motionera stiftet.</strong> Under termostaten sitter ett litet metallstift. Det styr flödet genom elementet. Nyp försiktigt med en polygrip och dra det ut och in några gånger tills det fjädrar fritt.</li>'
         + '<li><strong>Sätt tillbaka termostaten</strong> på max och känn efter om elementet blir varmt.</li></ol>'
+        + '<div class="warn">Lossa bara vredet. Skruva aldrig loss själva ventilen i röret, och skruva aldrig ur luftningsventilen helt. Då sprutar det.</div>'
         + '<p>Fortfarande kallt, eller flera element kalla samtidigt? Då kan trycket vara för lågt eller systemet behöva justeras in.</p>',
 
     help=dict(title="Fortfarande kallt?", text="I hyresrätt eller bostadsrätt: felanmäl till fastighetsskötaren. I villa: ring en VVS-firma eller den som installerade värmesystemet."),
