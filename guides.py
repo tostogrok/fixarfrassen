@@ -145,28 +145,36 @@ dict(
     keywords=["lufta", "element", "luftningsnyckel", "kallt", "porlar", "fjärrvärme", "lägenhet", "kalla element", "radiator"],
     lead="Kallt upptill eller porlande ljud? Då är det luft i elementet.",
     facts=[("Tid", "5 min per element"), ("Svårighet", "Lätt")],
-    need=["luftningsnyckel", "trasa", "mugg"],
+    need=["luftningsnyckel", "trasa", "mugg", "polygrip om termostaten krånglar"],
     answer="Håll en trasa eller mugg under luftningsventilen i elementets övre hörn. Vrid försiktigt moturs tills det pyser. Låt det rinna en stund när vattnet kommer, och stäng när det bara kommer vatten.",
     figure='<figure class="big"><img src="/img/varmesystem-luftning.svg" width="1010" height="740" alt="Genomskärning av ett flerbostadshus: varmt vatten pumpas från teknikrummet upp till elementen, luften samlas högst upp i elementet på översta våningen" loading="lazy"><figcaption>Luften följer med vattnet uppåt och fastnar högst upp. Därför är det oftast elementen på översta våningen som blir kalla.</figcaption></figure>',
     steps=[
         ("Hitta luftningsventilen", "Den sitter i elementets övre hörn, oftast på motsatt sida mot termostaten."),
         ("Öppna försiktigt", "Trasa eller mugg under. Vrid moturs tills det börjar pysa luft eller komma vatten."),
-        ("Låt det rinna en stund", "Först kommer ofta vatten blandat med luft. Vänta tills det bara kommer vatten, stäng sedan ventilen. Vattnet kan vara svart, så skydda golvet."),
+        ("Låt det rinna en stund", "Först kommer ofta vatten blandat med luft. Vänta tills det bara kommer vatten, stäng sedan ventilen. Vattnet kan vara svart, så skydda golv och vägg. Det gör inget om det skvätter lite, torka bara upp."),
         ("Ta nästa element", "Har du flera våningar: börja längst ner och sluta högst upp."),
         ("Kolla trycket", "Luftar du sjunker trycket i systemet. I villa: kolla mätaren vid pannan och fyll på om det behövs. I hyreshus fyller fastighetsskötaren på i teknikrummet."),
     ],
     after=tip_html("Bor du i hyresrätt? Gör en felanmälan, så luftar fastighetsskötaren. Det brukar ingå i hyran.")
         + '<h2>Varför kommer det luft i elementen?</h2><p><strong>Nytt vatten tar med sig luft.</strong> Efter ett elementbyte, en läcka eller rörjobb fylls systemet på, och luft följer med.</p><p><strong>Varmt vatten släpper luft.</strong> När vattnet värms upp på hösten frigörs luft som små bubblor. Därför porlar det ofta när värmen sätts på.</p><p><strong>För lågt tryck.</strong> Då kan luft sugas in vid packningar och kopplingar.</p><p>I gamla system kan rost i rören bilda gas som också samlas högst upp. Måste du lufta ofta är det värt att låta någon kolla systemet.</p>'
         + '<h2>Har du villa med egen panna eller värmepump?</h2><p>Stäng av cirkulationspumpen en stund innan du luftar, så hinner luften samla sig högst upp. Läs i manualen till din värmepump om den behöver stängas av.</p>'
-        + '<h2>Kallt trots luftning?</h2><p>Är elementet kallt nertill men varmt upptill är det inte luft. Ofta har stiftet i termostaten fastnat. Tryck försiktigt på stiftet under termostathuvudet så att det fjädrar. Är flera element kalla samtidigt kan trycket vara för lågt eller systemet behöva justeras in. Då ringer du fastighetsskötaren eller en VVS-firma.</p>',
+        + '<h2>Kallt trots luftning? Kolla termostaten</h2>'
+        + '<p>Termostaten kan ha fastnat. Det är lika vanligt som luft.</p>'
+        + '<ol class="mini"><li><strong>Vrid från lägsta till högsta läget.</strong> När termostaten öppnar hörs vattnet rinna. Hörs ingen skillnad och blir elementet inte varmt har den fastnat.</li>'
+        + '<li><strong>Ta av termostaten.</strong> Vrid till max. Lossa skruven eller muttern som håller den och dra av den rakt ut. Inget vatten kommer ut.</li>'
+        + '<li><strong>Motionera stiftet.</strong> Under termostaten sitter ett litet metallstift. Det styr flödet genom elementet. Nyp försiktigt med en polygrip och dra det ut och in några gånger tills det fjädrar fritt.</li>'
+        + '<li><strong>Sätt tillbaka termostaten</strong> på max och känn efter om elementet blir varmt.</li></ol>'
+        + '<p>Fortfarande kallt, eller flera element kalla samtidigt? Då kan trycket vara för lågt eller systemet behöva justeras in.</p>',
+
     help=dict(title="Fortfarande kallt?", text="I hyresrätt eller bostadsrätt: felanmäl till fastighetsskötaren. I villa: ring en VVS-firma eller den som installerade värmesystemet."),
     faqs=[
+        ("Varför blir inte elementet varmt fast jag har luftat?", "Ofta har stiftet under termostaten fastnat. Ta av termostaten och motionera stiftet med en polygrip tills det fjädrar fritt."),
         ("Kan man lufta element utan nyckel?", "Ja, om ventilen har ett spår. Då funkar en liten platt skruvmejsel. Har den ett fyrkantigt huvud behövs nyckeln. Den kostar några tior i järnhandeln."),
         ("Ska man lufta övervåningen eller nedervåningen först?", "Börja längst ner och sluta högst upp, där mest luft samlas."),
         ("Hur luftar man element med fjärrvärme?", "Likadant. I hyreshus med fjärrvärme sköter fastighetsskötaren oftast luftningen och trycket i teknikrummet."),
         ("Det kommer inget vatten när jag luftar. Varför?", "Trycket i systemet är för lågt. I villa fyller du på vid pannan. I lägenhet gör du en felanmälan."),
         ("Hur ofta ska man lufta element?", "Inför varje vinter, och när elementet är kallt upptill eller porlar."),
-        ("Varför är vattnet svart när jag luftar?", "Det är slam och rost från rören. Det är vanligt i äldre system, men fånga upp det, för det kan missfärga golv och mattor."),
+        ("Varför är vattnet svart när jag luftar?", "Det är slam från rören. Stålrör och element rostar sakta inifrån, och rostpartiklarna blir svarta i vattnet. Det är normalt i äldre system. Mycket slam kan sätta igen termostatventilerna, så måste du lufta ofta och vattnet är väldigt svart, låt någon kolla systemet."),
     ],
     related=["stopp-i-avloppet-koket", "byta-termostat-element"],
     updated="2026-10-20",
