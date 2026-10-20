@@ -145,17 +145,18 @@ dict(
     keywords=["lufta", "element", "luftningsnyckel", "kallt", "porlar", "fjärrvärme", "lägenhet", "kalla element", "radiator"],
     lead="Kallt upptill eller porlande ljud? Då är det luft i elementet.",
     facts=[("Tid", "5 min per element"), ("Svårighet", "Lätt")],
-    need=["luftningsnyckel", "trasa", "kopp"],
-    answer="Håll trasan under luftningsventilen i elementets övre hörn. Vrid nyckeln ett kvarts varv moturs. Stäng när det kommer vatten i stället för luft.",
+    need=["luftningsnyckel", "trasa", "mugg"],
+    answer="Håll en trasa eller mugg under luftningsventilen i elementets övre hörn. Vrid försiktigt moturs tills det pyser. Låt det rinna en stund när vattnet kommer, och stäng när det bara kommer vatten.",
     figure='<figure class="big"><img src="/img/varmesystem-luftning.svg" width="1010" height="740" alt="Genomskärning av ett flerbostadshus: varmt vatten pumpas från teknikrummet upp till elementen, luften samlas högst upp i elementet på översta våningen" loading="lazy"><figcaption>Luften följer med vattnet uppåt och fastnar högst upp. Därför är det oftast elementen på översta våningen som blir kalla.</figcaption></figure>',
     steps=[
         ("Hitta luftningsventilen", "Den sitter i elementets övre hörn, oftast på motsatt sida mot termostaten."),
-        ("Öppna ett kvarts varv", "Trasan och koppen under. Vrid nyckeln moturs tills det pyser. Öppna inte mer, ventilen kan lossna."),
-        ("Stäng när det kommer vatten", "Kommer det en jämn stråle vatten utan luft är elementet luftat. Stäng ventilen."),
+        ("Öppna försiktigt", "Trasa eller mugg under. Vrid moturs tills det börjar pysa luft eller komma vatten."),
+        ("Låt det rinna en stund", "Först kommer ofta vatten blandat med luft. Vänta tills det bara kommer vatten, stäng sedan ventilen. Vattnet kan vara svart, så skydda golvet."),
         ("Ta nästa element", "Har du flera våningar: börja längst ner och sluta högst upp."),
         ("Kolla trycket", "Luftar du sjunker trycket i systemet. I villa: kolla mätaren vid pannan och fyll på om det behövs. I hyreshus fyller fastighetsskötaren på i teknikrummet."),
     ],
     after=tip_html("Bor du i hyresrätt? Gör en felanmälan, så luftar fastighetsskötaren. Det brukar ingå i hyran.")
+        + '<h2>Varför kommer det luft i elementen?</h2><p><strong>Nytt vatten tar med sig luft.</strong> Efter ett elementbyte, en läcka eller rörjobb fylls systemet på, och luft följer med.</p><p><strong>Varmt vatten släpper luft.</strong> När vattnet värms upp på hösten frigörs luft som små bubblor. Därför porlar det ofta när värmen sätts på.</p><p><strong>För lågt tryck.</strong> Då kan luft sugas in vid packningar och kopplingar.</p><p>I gamla system kan rost i rören bilda gas som också samlas högst upp. Måste du lufta ofta är det värt att låta någon kolla systemet.</p>'
         + '<h2>Har du villa med egen panna eller värmepump?</h2><p>Stäng av cirkulationspumpen en stund innan du luftar, så hinner luften samla sig högst upp. Läs i manualen till din värmepump om den behöver stängas av.</p>'
         + '<h2>Kallt trots luftning?</h2><p>Är elementet kallt nertill men varmt upptill är det inte luft. Ofta har stiftet i termostaten fastnat. Tryck försiktigt på stiftet under termostathuvudet så att det fjädrar. Är flera element kalla samtidigt kan trycket vara för lågt eller systemet behöva justeras in. Då ringer du fastighetsskötaren eller en VVS-firma.</p>',
     help=dict(title="Fortfarande kallt?", text="I hyresrätt eller bostadsrätt: felanmäl till fastighetsskötaren. I villa: ring en VVS-firma eller den som installerade värmesystemet."),
@@ -165,6 +166,7 @@ dict(
         ("Hur luftar man element med fjärrvärme?", "Likadant. I hyreshus med fjärrvärme sköter fastighetsskötaren oftast luftningen och trycket i teknikrummet."),
         ("Det kommer inget vatten när jag luftar. Varför?", "Trycket i systemet är för lågt. I villa fyller du på vid pannan. I lägenhet gör du en felanmälan."),
         ("Hur ofta ska man lufta element?", "Inför varje vinter, och när elementet är kallt upptill eller porlar."),
+        ("Varför är vattnet svart när jag luftar?", "Det är slam och rost från rören. Det är vanligt i äldre system, men fånga upp det, för det kan missfärga golv och mattor."),
     ],
     related=["stopp-i-avloppet-koket", "byta-termostat-element"],
     updated="2026-10-20",
